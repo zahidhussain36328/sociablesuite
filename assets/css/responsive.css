@@ -1,0 +1,213 @@
+@media (max-width: 767px) {
+
+
+    .dt-hero-vbg {
+        position: absolute;
+        bottom: 0px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .contact .info-box h3 {
+        font-size: 1.75rem;
+    }
+
+    .header .header-container {
+        backdrop-filter: unset;
+        background: linear-gradient(45.58deg, #6E44FF -67.59%, #BE46FF 47.4%, #59D8FF 160.2%);
+    }
+
+    .mobile-nav-toggle {
+        color: #fff;
+    }
+
+    .dt-hero-model {
+        max-width: 230px !important;
+    }
+
+    .dt-hero-title {
+        font-size: 48px;
+    }
+
+    .dt-model-wrapper {
+        left: 0;
+        transform: unset;
+        width: 100%;
+        transform: unset;
+        z-index: 9;
+        bottom: -40px;
+    }
+
+    .fashion-top {
+        top: -50px !important;
+        left: 0% !important;
+        z-index: 1 !important;
+    }
+
+    .dt-hero-subtitle {
+        font-size: 67px;
+    }
+
+    .digital-era {
+        top: 55px;
+    }
+
+
+    .dt-right-content {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        align-items: flex-start;
+    }
+
+    .card-left {
+        left: 0;
+        top: 190px;
+    }
+
+    .dt-hero-card {
+        width: 160px;
+    }
+
+    .card-right {
+        top: 138px;
+        right: 0;
+    }
+
+    .card-right .dt-hero-card {
+        width: 160px;
+    }
+
+    .dt-hero-card img {
+        width: 100%;
+        height: 185px;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .card-right .dt-hero-card img {
+        height: 185px;
+    }
+
+    .dt-vector-right {
+        height: 30px;
+        width: auto;
+        opacity: 1;
+        margin-right: 25px;
+    }
+
+    .dt-hero-btn {
+        gap: 12px;
+        padding: 7px 13px;
+        font-size: 14px;
+    }
+
+    .dt-btn-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .dt-card-pill {
+        font-size: 18px;
+        width: 80%;
+        line-height: 28px;
+    }
+
+    .dt-hero-desc {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: justify;
+        hyphens: auto;
+    }
+
+    .dt-vector-left {
+        top: -30px;
+        left: 20px;
+        height: 30px;
+    }
+
+    .dt-desc-wrapper {
+        margin-top: 42px;
+        padding-top: 5px;
+    }
+
+    .header {
+        padding: 0;
+        left: 0;
+        right: 0;
+    }
+
+
+
+    .dt-download {
+        padding: 50px 0;
+    }
+
+    .dt-download-title {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+
+    .dt-download-text {
+        font-size: 16px;
+    }
+
+    .dt-btn-download {
+        font-size: 14px;
+        padding: 5px 5px 5px 15px;
+        min-width: auto;
+        width: auto;
+        gap: 8px;
+    }
+
+    .dt-btn-icon-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .dt-feature-card.highlighted {
+        transform: unset;
+    }
+
+    .dt-feature-card:hover {
+        transform: unset;
+    }
+
+    .dt-accordion-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        min-width: 32px;
+    }
+
+    .footer .copyright {
+        padding: 30px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 0px;
+    }
+
+    .footer {
+        padding-top: 30px;
+    }
+
+    .dt-contact {
+        padding: 50px 0;
+    }
+
+    .dt-faq {
+        padding: 50px 0;
+    }
+
+    .dt-features {
+        padding: 50px 0;
+    }
+
+
+
+
+
+
+
+}
