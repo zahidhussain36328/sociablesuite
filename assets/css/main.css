@@ -185,7 +185,7 @@ h6 {
 .header .header-container {
   border-radius: 20px;
   padding: 5px 25px;
-  height: 100px;
+  height: 80px;
   background: rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(6px) saturate(100%);
   -webkit-backdrop-filter: blur(20px) saturate(120%);
@@ -203,7 +203,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 60px;
+  max-height: 50px;
   margin-right: 8px;
 }
 
@@ -219,7 +219,7 @@ h6 {
   color: var(--contrast-color);
   background: linear-gradient(45.58deg, #6E44FF -67.59%, #BE46FF 47.4%, #59D8FF 160.2%);
   box-shadow: 0px 0px 20px 0px #815FFE99;
-  font-size: 20px;
+  font-size: 16px;
   padding: 10px 25px;
   margin: 0 0 0 30px;
   border-radius: 12px;
@@ -282,8 +282,8 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: #fff;
-    padding: 18px 15px;
-    font-size: 18px;
+    padding: 10px 15px;
+    font-size: 16px;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -4530,32 +4530,21 @@ section,
 /* Cards */
 .ss-why-card {
   position: relative;
-
   display: flex;
   gap: 24px;
-
-  padding: 34px;
-
+  padding: 24px;
   border-radius: 30px;
-
   background: rgba(255, 255, 255, .04);
-
   border: 1px solid rgba(255, 255, 255, .06);
-
   backdrop-filter: blur(14px);
-
   transition: .4s ease;
-
   margin-bottom: 24px;
-
   overflow: hidden;
 }
 
 .ss-why-card:hover {
   transform: translateY(-8px);
-
   border-color: rgba(89, 216, 255, .25);
-
   box-shadow:
     0 20px 50px rgba(0, 0, 0, .4),
     0 0 40px rgba(89, 216, 255, .08);
@@ -4565,21 +4554,16 @@ section,
 .ss-why-icon {
   min-width: 74px;
   height: 74px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 22px;
-
   background: linear-gradient(135deg,
       #6E44FF,
       #59D8FF);
 
   color: #fff;
-
   font-size: 30px;
-
   box-shadow: 0 15px 35px rgba(110, 68, 255, .3);
 }
 
@@ -4591,19 +4575,15 @@ section,
 
 .ss-why-content h3 {
   color: #fff;
-
   font-size: 32px;
   font-weight: 700;
-
   margin-bottom: 14px;
 }
 
 .ss-why-content p {
   color: rgba(255, 255, 255, .68);
-
   font-size: 18px;
   line-height: 1.8;
-
   margin-bottom: 0;
 }
 
@@ -4612,9 +4592,7 @@ section,
   position: absolute;
   top: 0;
   right: 0;
-
   color: rgba(255, 255, 255, .25);
-
   font-size: 24px;
 }
 
@@ -4626,28 +4604,18 @@ section,
 /* Badge */
 .ss-why-badge {
   position: absolute;
-
   top: 24px;
   left: 24px;
-
   z-index: 3;
-
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
   padding: 12px 18px;
-
   border-radius: 100px;
-
   background: rgba(7, 11, 20, .7);
-
   border: 1px solid rgba(255, 255, 255, .08);
-
   backdrop-filter: blur(14px);
-
   color: #fff;
-
   font-size: 15px;
   font-weight: 600;
 }
@@ -4655,22 +4623,18 @@ section,
 .ss-why-badge span {
   width: 10px;
   height: 10px;
-
   border-radius: 50%;
-
   background: #59ff9f;
-
   box-shadow: 0 0 12px #59ff9f;
 }
 
 /* Main Image */
 .ss-why-image {
   width: 100%;
-
+  height: 574px;
+  object-fit: cover;
   border-radius: 34px;
-
   border: 1px solid rgba(255, 255, 255, .08);
-
   box-shadow:
     0 30px 80px rgba(0, 0, 0, .45);
 }
@@ -4678,14 +4642,10 @@ section,
 /* Stats */
 .ss-why-stats {
   position: absolute;
-
   left: 50%;
   bottom: -40px;
-
   transform: translateX(-50%);
-
   width: calc(100% - 80px);
-
   display: flex;
   gap: 18px;
 }
@@ -4693,27 +4653,18 @@ section,
 /* Stat Card */
 .ss-stat-card {
   flex: 1;
-
   padding: 26px 20px;
-
   border-radius: 24px;
-
   background: rgba(14, 18, 28, .9);
-
   border: 1px solid rgba(255, 255, 255, .06);
-
   backdrop-filter: blur(14px);
-
   text-align: center;
-
   transition: .4s ease;
 }
 
 .ss-stat-card.active {
   transform: translateY(-14px);
-
   border-color: rgba(89, 216, 255, .3);
-
   box-shadow:
     0 20px 40px rgba(0, 0, 0, .35),
     0 0 40px rgba(89, 216, 255, .08);
@@ -4721,33 +4672,26 @@ section,
 
 .ss-stat-icon {
   color: #59D8FF;
-
   font-size: 28px;
-
   margin-bottom: 12px;
 }
 
 .ss-stat-card h4 {
   color: #fff;
-
   font-size: 42px;
   font-weight: 800;
-
   margin-bottom: 8px;
 }
 
 .ss-stat-card p {
   color: rgba(255, 255, 255, .62);
-
   font-size: 14px;
   line-height: 1.6;
-
   margin-bottom: 0;
 }
 
 /* Responsive */
 @media(max-width:1200px) {
-
   .ss-why-heading h2 {
     font-size: 58px;
   }
