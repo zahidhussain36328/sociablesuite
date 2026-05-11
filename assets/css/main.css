@@ -3240,7 +3240,7 @@ section,
     radial-gradient(at bottom left, #241b3a 0%, transparent 60%),
     radial-gradient(at bottom right, #3a2a6e 0%, transparent 60%),
     #120e22;
-  padding: 100px 0;
+  padding: 90px 0;
   position: relative;
   overflow: hidden;
 }
@@ -3964,7 +3964,7 @@ section,
 
 .ss-more-features {
   position: relative;
-  padding: 120px 0;
+  padding: 100px 0;
   background: #070B14;
   overflow: hidden;
 }
@@ -4131,6 +4131,17 @@ section,
   background: linear-gradient(135deg, #6E44FF, #59D8FF);
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(110, 68, 255, .35);
+}
+
+.ss-features-slider .swiper-slide {
+  transition: .4s ease;
+  opacity: .45;
+  transform: scale(.92);
+}
+
+.ss-features-slider .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Responsive */
@@ -4479,7 +4490,7 @@ section,
 
 .ss-why-section {
   position: relative;
-  padding: 120px 0;
+  padding: 90px 0;
   background: #070B14;
   overflow: hidden;
 }

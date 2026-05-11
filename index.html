@@ -645,6 +645,52 @@
 
                             </div>
                         </div>
+                        <!-- Start Page Card -->
+                        <div class="swiper-slide">
+                            <div class="ss-feature-card">
+
+                                <div class="ss-feature-image orange">
+                                    <img src="assets/img/features/start-page.avif" alt="Start Page">
+                                </div>
+
+                                <div class="ss-feature-content">
+                                    <h3>Start Page</h3>
+
+                                    <p>
+                                        Turn your social bio into a beautiful personalized landing experience.
+                                    </p>
+
+                                    <a href="#">
+                                        Learn more
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Card -->
+                        <div class="swiper-slide">
+                            <div class="ss-feature-card">
+
+                                <div class="ss-feature-image purple">
+                                    <img src="assets/img/features/mobile-app.avif" alt="Mobile App">
+                                </div>
+
+                                <div class="ss-feature-content">
+                                    <h3>Mobile App</h3>
+
+                                    <p>
+                                        Manage your social media accounts from anywhere with full flexibility.
+                                    </p>
+
+                                    <a href="#">
+                                        Learn more
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
 
                     </div>
 
@@ -1059,6 +1105,9 @@
             spaceBetween: 30,
             grabCursor: true,
 
+            centeredSlides: true,
+            initialSlide: 2,
+
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
@@ -1073,14 +1122,17 @@
 
                 0: {
                     slidesPerView: 1,
+                    centeredSlides: false,
                 },
 
                 768: {
                     slidesPerView: 2,
+                    centeredSlides: true,
                 },
 
                 1200: {
                     slidesPerView: 4,
+                    centeredSlides: true,
                 }
 
             }
