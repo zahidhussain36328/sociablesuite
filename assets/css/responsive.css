@@ -1,213 +1,802 @@
+/**
+ * Sociable Suite — responsive layout & compact UI
+ * Targets viewports below ~1920×1200: tighter rhythm, viewport-aware hero,
+ * scroll snap for cleaner “one section at a time” scrolling.
+ */
+
+/* -------------------------------------------------------------------------
+   Scroll: align sections to viewport (gentle snap; tall sections still scroll)
+--------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 96px;
+  }
+
+  body.index-page main {
+    scroll-snap-type: y proximity;
+  }
+
+  body.index-page main > section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.index-page main {
+    scroll-snap-type: none;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Below “large desktop” (1920×1200 reference): global compaction
+--------------------------------------------------------------------------- */
+@media (max-width: 1919px) {
+
+  body.index-page main > section:not(#hero) {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  body.index-page .section-title {
+    padding-bottom: 28px;
+  }
+
+  /* Header: slimmer bar & CTA */
+  .header .header-container {
+    height: 64px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .header .logo img {
+    max-height: 40px;
+  }
+
+  .header .btn-getstarted,
+  .header .btn-getstarted:focus {
+    font-size: 14px;
+    padding: 8px 18px;
+    margin-left: 16px;
+    border-radius: 10px;
+  }
+
+  /* Hero: fill first screen, reduce oversized type & chrome */
+  #hero.ss-hero.hero.section {
+    min-height: 100dvh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 108px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+  }
+
+  #hero.ss-hero .ss-badge {
+    font-size: 13px;
+    padding: 7px 14px;
+    margin-bottom: 18px;
+  }
+
+  #hero.ss-hero .ss-badge span {
+    width: 8px;
+    height: 8px;
+  }
+
+  #hero.ss-hero .ss-title {
+    font-size: clamp(2.25rem, 4.2vw + 1rem, 4.25rem);
+    letter-spacing: -0.06em;
+    margin-bottom: 18px;
+  }
+
+  #hero.ss-hero .ss-subtitle {
+    font-size: clamp(1rem, 0.9vw + 0.75rem, 1.25rem);
+    line-height: 1.55;
+    max-width: 640px;
+  }
+
+  #hero.ss-hero .ss-hero-form {
+    margin-top: 28px;
+    gap: 12px;
+  }
+
+  #hero.ss-hero .ss-hero-form input {
+    width: min(100%, 380px);
+    height: 48px;
+    font-size: 15px;
+    border-radius: 12px;
+    padding: 0 18px;
+  }
+
+  #hero.ss-hero .ss-hero-form button {
+    height: 48px;
+    padding: 0 22px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  #hero.ss-hero .ss-users {
+    margin-top: 14px;
+    font-size: 13px;
+  }
+
+  #hero.ss-hero .ss-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    font-size: 20px;
+  }
+
+  /* Why */
+  .ss-why-section {
+    padding-top: 48px;
+    padding-bottom: 74px !important;
+  }
+
+  .ss-why-heading {
+    margin-bottom: 36px;
+  }
+
+  .ss-why-tag {
+    padding: 8px 16px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    font-size: 12px;
+  }
+
+  .ss-why-heading h2 {
+    font-size: clamp(1.75rem, 2.5vw + 1rem, 3.25rem);
+    letter-spacing: -0.04em;
+  }
+
+  .ss-why-card {
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    border-radius: 20px;
+    gap: 16px;
+  }
+
+  .ss-why-icon {
+    min-width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 18px;
+  }
+
+  .ss-why-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .ss-why-content p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .ss-arrow {
+    font-size: 18px;
+  }
+
+  .ss-why-badge {
+    padding: 8px 14px;
+    font-size: 13px;
+    top: 16px;
+    left: 16px;
+  }
+
+  .ss-why-image {
+    height: auto;
+    max-height: 440px;
+    min-height: 240px;
+    border-radius: 22px;
+  }
+
+  .ss-stat-card {
+    padding: 14px 12px;
+    border-radius: 16px;
+    flex: 1 1 120px;
+    min-width: 100px;
+  }
+
+  .ss-stat-card.active {
+    transform: translateY(-6px);
+  }
+
+  .ss-stat-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .ss-stat-card h4 {
+    font-size: 1.65rem;
+  }
+
+  .ss-stat-card p {
+    font-size: 12px;
+  }
+
+  /* Download / About strip */
+  .dt-download {
+    padding: 48px 0;
+  }
+
+  .dt-download-title {
+    font-size: clamp(1.75rem, 2.2vw + 1rem, 2.75rem);
+    margin-bottom: 16px;
+  }
+
+  .dt-download-text {
+    font-size: clamp(0.95rem, 0.5vw + 0.85rem, 1.15rem);
+    line-height: 1.5;
+  }
+
+  .dt-download-btns {
+    margin-top: 28px;
+  }
+
+  .dt-btn-download {
+    min-width: auto;
+    font-size: 15px;
+    gap: 12px;
+    padding: 6px 6px 6px 22px;
+    border-radius: 999px;
+  }
+
+  .dt-btn-icon-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  /* Connect */
+  .dt-connect {
+    padding: 48px 0;
+  }
+
+  .dt-connect .dt-connect-heading {
+    font-size: clamp(1.65rem, 2vw + 1rem, 2.65rem);
+    margin-bottom: 12px;
+  }
+
+  .dt-connect .dt-connect-subtext {
+    font-size: 15px;
+  }
+
+  .dt-connect .dt-connect-badge {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .dt-connect .dt-connect-badge i {
+    font-size: 0.95em;
+  }
+
+  .dt-social-grid {
+    gap: 14px 16px;
+    margin-top: 8px;
+  }
+
+  .dt-social-card {
+    width: 96px;
+    height: 96px;
+    border-radius: 18px;
+    gap: 8px;
+  }
+
+  .dt-social-icon {
+    font-size: 28px;
+  }
+
+  .dt-social-name {
+    font-size: 12px;
+  }
+
+  .dt-connect-btn {
+    padding: 10px 24px;
+    font-size: 15px;
+    gap: 10px;
+    border-radius: 999px;
+  }
+
+  .dt-connect-btn i {
+    font-size: 18px;
+  }
+
+  /* Feature cards */
+  .dt-features {
+    padding: 48px 0;
+  }
+
+  .dt-feature-card {
+    padding: 28px 22px;
+    border-radius: 24px;
+  }
+
+  .dt-feature-card.highlighted,
+  .dt-feature-card:hover {
+    transform: scale(1.02);
+  }
+
+  .dt-feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+  }
+
+  .dt-feature-icon i {
+    font-size: 20px;
+  }
+
+  .dt-feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .dt-feature-card p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  /* More features slider */
+  .ss-more-features {
+    padding: 48px 0;
+  }
+
+  .ss-section-tag {
+    padding: 7px 14px;
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .ss-section-title {
+    font-size: clamp(1.75rem, 2.5vw + 1rem, 3rem);
+    letter-spacing: -0.04em;
+  }
+
+  .ss-features-slider {
+    padding-top: 20px;
+  }
+
+  .ss-more-features > .container > .text-center.mb-5 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .ss-feature-image {
+    height: 180px;
+  }
+
+  .ss-feature-content {
+    padding: 14px 16px;
+  }
+
+  .ss-feature-content h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+
+  .ss-feature-content p {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+
+  .ss-feature-content a {
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .ss-prev,
+  .ss-next {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px;
+  }
+
+  .ss-prev i,
+  .ss-next i {
+    font-size: 1rem;
+  }
+
+  .ss-slider-nav {
+    margin-top: 22px;
+    gap: 12px;
+  }
+
+  /* FAQ */
+  .dt-faq {
+    padding: 48px 0;
+  }
+
+  .dt-faq-illustration img {
+    max-height: min(48dvh, 360px);
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .dt-accordion {
+    gap: 12px;
+  }
+
+  .dt-accordion-btn {
+    font-size: 16px !important;
+    padding: 16px 20px !important;
+  }
+
+  .dt-accordion-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .dt-accordion-body {
+    padding: 0 20px 16px 20px !important;
+    font-size: 14px !important;
+  }
+
+  /* Contact */
+  .dt-contact {
+    padding: 48px 0;
+  }
+
+  .dt-contact-desc {
+    font-size: 15px;
+  }
+
+  .dt-contact-card {
+    padding: 16px 18px;
+    gap: 14px;
+    border-radius: 14px;
+  }
+
+  .dt-contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .dt-contact-content h5 {
+    font-size: 16px;
+  }
+
+  .dt-contact-content p {
+    font-size: 14px;
+  }
+
+  .dt-contact-form-wrapper {
+    padding: 28px;
+    border-radius: 20px;
+  }
+
+  .dt-contact-form label {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .dt-contact-form .form-control {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .dt-btn-send {
+    padding: 12px 0;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  /* CTA */
+  .ss-cta-section {
+    padding: 48px 0;
+  }
+
+  .ss-cta-box {
+    padding: 36px 28px;
+    border-radius: 22px;
+  }
+
+  .ss-cta-badge {
+    padding: 8px 14px;
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  .ss-cta-content h2 {
+    font-size: clamp(1.75rem, 2.8vw + 1rem, 3.25rem);
+    letter-spacing: -0.04em;
+    margin-bottom: 14px;
+  }
+
+  .ss-cta-content p {
+    font-size: clamp(0.95rem, 0.6vw + 0.8rem, 1.1rem);
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+
+  .ss-btn-primary,
+  .ss-btn-secondary {
+    height: 48px;
+    padding: 0 22px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .ss-cta-bottom {
+    margin-top: 22px;
+    font-size: 13px;
+  }
+
+  .footer .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+
+  .footer h4 {
+    font-size: 18px;
+    margin-bottom: 28px;
+  }
+}
+
+/* Short laptop screens: compress hero further */
+@media (max-width: 1919px) and (max-height: 900px) {
+
+  #hero.ss-hero.hero.section {
+    padding-top: 88px;
+    padding-bottom: 28px;
+  }
+
+  #hero.ss-hero .ss-hero-form {
+    margin-top: 18px;
+  }
+
+  #hero.ss-hero .ss-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 1919px) and (max-height: 760px) {
+
+  #hero.ss-hero .ss-floating-icons .ss-icon {
+    display: none;
+  }
+
+  #hero.ss-hero .ss-title {
+    font-size: clamp(1.85rem, 3vw, 2.75rem);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Tablet
+--------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  .dt-social-card {
+    width: 88px;
+    height: 88px;
+  }
+
+  .dt-social-icon {
+    font-size: 24px;
+  }
+
+  .ss-why-section {
+    padding-bottom: 56px !important;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Small phones (legacy block — dt-* hero from older template)
+--------------------------------------------------------------------------- */
 @media (max-width: 767px) {
 
+  .dt-hero-vbg {
+    position: absolute;
+    bottom: 0px;
+    max-width: 100%;
+    height: auto;
+  }
 
-    .dt-hero-vbg {
-        position: absolute;
-        bottom: 0px;
-        max-width: 100%;
-        height: auto;
-    }
+  .contact .info-box h3 {
+    font-size: 1.75rem;
+  }
 
-    .contact .info-box h3 {
-        font-size: 1.75rem;
-    }
+  .header .header-container {
+    backdrop-filter: unset;
+    background: linear-gradient(45.58deg, #6E44FF -67.59%, #BE46FF 47.4%, #59D8FF 160.2%);
+  }
 
-    .header .header-container {
-        backdrop-filter: unset;
-        background: linear-gradient(45.58deg, #6E44FF -67.59%, #BE46FF 47.4%, #59D8FF 160.2%);
-    }
+  .mobile-nav-toggle {
+    color: #fff;
+  }
 
-    .mobile-nav-toggle {
-        color: #fff;
-    }
+  .dt-hero-model {
+    max-width: 230px !important;
+  }
 
-    .dt-hero-model {
-        max-width: 230px !important;
-    }
+  .dt-hero-title {
+    font-size: 48px;
+  }
 
-    .dt-hero-title {
-        font-size: 48px;
-    }
+  .dt-model-wrapper {
+    left: 0;
+    transform: unset;
+    width: 100%;
+    transform: unset;
+    z-index: 9;
+    bottom: -40px;
+  }
 
-    .dt-model-wrapper {
-        left: 0;
-        transform: unset;
-        width: 100%;
-        transform: unset;
-        z-index: 9;
-        bottom: -40px;
-    }
+  .fashion-top {
+    top: -50px !important;
+    left: 0% !important;
+    z-index: 1 !important;
+  }
 
-    .fashion-top {
-        top: -50px !important;
-        left: 0% !important;
-        z-index: 1 !important;
-    }
+  .dt-hero-subtitle {
+    font-size: 67px;
+  }
 
-    .dt-hero-subtitle {
-        font-size: 67px;
-    }
+  .digital-era {
+    top: 55px;
+  }
 
-    .digital-era {
-        top: 55px;
-    }
+  .dt-right-content {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    align-items: flex-start;
+  }
 
+  .card-left {
+    left: 0;
+    top: 190px;
+  }
 
-    .dt-right-content {
-        position: absolute;
-        top: 0px;
-        left: 0;
-        align-items: flex-start;
-    }
+  .dt-hero-card {
+    width: 160px;
+  }
 
-    .card-left {
-        left: 0;
-        top: 190px;
-    }
+  .card-right {
+    top: 138px;
+    right: 0;
+  }
 
-    .dt-hero-card {
-        width: 160px;
-    }
+  .card-right .dt-hero-card {
+    width: 160px;
+  }
 
-    .card-right {
-        top: 138px;
-        right: 0;
-    }
+  .dt-hero-card img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    object-position: top;
+  }
 
-    .card-right .dt-hero-card {
-        width: 160px;
-    }
+  .card-right .dt-hero-card img {
+    height: 185px;
+  }
 
-    .dt-hero-card img {
-        width: 100%;
-        height: 185px;
-        object-fit: cover;
-        object-position: top;
-    }
+  .dt-vector-right {
+    height: 30px;
+    width: auto;
+    opacity: 1;
+    margin-right: 25px;
+  }
 
-    .card-right .dt-hero-card img {
-        height: 185px;
-    }
+  .dt-hero-btn {
+    gap: 12px;
+    padding: 7px 13px;
+    font-size: 14px;
+  }
 
-    .dt-vector-right {
-        height: 30px;
-        width: auto;
-        opacity: 1;
-        margin-right: 25px;
-    }
+  .dt-btn-icon {
+    width: 30px;
+    height: 30px;
+  }
 
-    .dt-hero-btn {
-        gap: 12px;
-        padding: 7px 13px;
-        font-size: 14px;
-    }
+  .dt-card-pill {
+    font-size: 18px;
+    width: 80%;
+    line-height: 28px;
+  }
 
-    .dt-btn-icon {
-        width: 30px;
-        height: 30px;
-    }
+  .dt-hero-desc {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: justify;
+    hyphens: auto;
+  }
 
-    .dt-card-pill {
-        font-size: 18px;
-        width: 80%;
-        line-height: 28px;
-    }
+  .dt-vector-left {
+    top: -30px;
+    left: 20px;
+    height: 30px;
+  }
 
-    .dt-hero-desc {
-        max-width: 100%;
-        font-size: 16px;
-        line-height: 24px;
-        text-align: justify;
-        hyphens: auto;
-    }
+  .dt-desc-wrapper {
+    margin-top: 42px;
+    padding-top: 5px;
+  }
 
-    .dt-vector-left {
-        top: -30px;
-        left: 20px;
-        height: 30px;
-    }
+  .header {
+    padding: 0;
+    left: 0;
+    right: 0;
+  }
 
-    .dt-desc-wrapper {
-        margin-top: 42px;
-        padding-top: 5px;
-    }
+  .dt-download {
+    padding: 50px 0;
+  }
 
-    .header {
-        padding: 0;
-        left: 0;
-        right: 0;
-    }
+  .dt-download-title {
+    font-size: 32px;
+    margin-bottom: 0;
+  }
 
+  .dt-download-text {
+    font-size: 16px;
+  }
 
+  .dt-btn-download {
+    font-size: 14px;
+    padding: 5px 5px 5px 15px;
+    min-width: auto;
+    width: auto;
+    gap: 8px;
+  }
 
-    .dt-download {
-        padding: 50px 0;
-    }
+  .dt-btn-icon-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
 
-    .dt-download-title {
-        font-size: 32px;
-        margin-bottom: 0;
-    }
+  .dt-feature-card.highlighted {
+    transform: unset;
+  }
 
-    .dt-download-text {
-        font-size: 16px;
-    }
+  .dt-feature-card:hover {
+    transform: unset;
+  }
 
-    .dt-btn-download {
-        font-size: 14px;
-        padding: 5px 5px 5px 15px;
-        min-width: auto;
-        width: auto;
-        gap: 8px;
-    }
+  .dt-accordion-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    min-width: 32px;
+  }
 
-    .dt-btn-icon-circle {
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-    }
+  .footer .copyright {
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 0px;
+  }
 
-    .dt-feature-card.highlighted {
-        transform: unset;
-    }
+  .footer {
+    padding-top: 30px;
+  }
 
-    .dt-feature-card:hover {
-        transform: unset;
-    }
+  .dt-contact {
+    padding: 50px 0;
+  }
 
-    .dt-accordion-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 18px;
-        min-width: 32px;
-    }
+  .dt-faq {
+    padding: 50px 0;
+  }
 
-    .footer .copyright {
-        padding: 30px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 0px;
-    }
+  .dt-features {
+    padding: 50px 0;
+  }
 
-    .footer {
-        padding-top: 30px;
-    }
-
-    .dt-contact {
-        padding: 50px 0;
-    }
-
-    .dt-faq {
-        padding: 50px 0;
-    }
-
-    .dt-features {
-        padding: 50px 0;
-    }
-
-
-
-
-
-
-
+  body.index-page main {
+    scroll-snap-type: none;
+  }
 }

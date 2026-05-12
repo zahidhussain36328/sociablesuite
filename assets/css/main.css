@@ -3327,8 +3327,8 @@ section,
   background-clip: text;
   color: transparent;
   margin-bottom: 20px;
-  font-family: 'LT Amber Wide', sans-serif;
-  letter-spacing: -1px;
+  /* font-family: 'LT Amber Wide', sans-serif; */
+  /* letter-spacing: -1px; */
 }
 
 .dt-connect .dt-connect-subtext {
