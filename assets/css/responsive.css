@@ -217,7 +217,7 @@
 
   /* Download / About strip */
   .dt-download {
-    padding: 48px 0;
+    padding: 68px 0 !important;
   }
 
   .dt-download-title {
@@ -304,17 +304,17 @@
 
   /* Feature cards */
   .dt-features {
-    padding: 48px 0;
+    padding: 68px 0 78px 0!important;
   }
 
   .dt-feature-card {
-    padding: 28px 22px;
-    border-radius: 24px;
+    padding: 48px 32px;
+    border-radius: 34px;
   }
 
   .dt-feature-card.highlighted,
   .dt-feature-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.06);
   }
 
   .dt-feature-icon {
@@ -329,7 +329,7 @@
   }
 
   .dt-feature-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
   }
 
@@ -363,7 +363,7 @@
   }
 
   .ss-feature-image {
-    height: 180px;
+    height: 200px;
   }
 
   .ss-feature-content {
@@ -490,7 +490,7 @@
   }
 
   .ss-cta-box {
-    padding: 36px 28px;
+    padding: 56px 28px;
     border-radius: 22px;
   }
 
