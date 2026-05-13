@@ -800,3 +800,36 @@
     scroll-snap-type: none;
   }
 }
+
+/* Feature subpages (e.g. publish.html): roomier bands than default section compaction */
+@media (max-width: 1919px) {
+  body.index-page main > section.ss-feature-showcase.section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+
+@media (max-width: 767px) {
+  body.index-page main > section.ss-feature-showcase.section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .ss-feature-showcase h2 {
+    font-size: clamp(1.45rem, 3vw + 0.85rem, 1.85rem);
+  }
+
+  .ss-feature-showcase .lead-copy {
+    font-size: 16px;
+  }
+}
+
+/* Split feature hero: stacked layout should not force full viewport height */
+@media (max-width: 991px) {
+  #hero.ss-hero.ss-page-hero.hero.section {
+    min-height: 0;
+    display: block;
+    padding-top: 96px;
+    padding-bottom: 48px;
+  }
+}
