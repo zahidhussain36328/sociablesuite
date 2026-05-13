@@ -9,7 +9,7 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
+    if (!selectHeader || (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top'))) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
@@ -22,9 +22,17 @@
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
+    const body = document.querySelector('body');
+    const wasMobileNavActive = body.classList.contains('mobile-nav-active');
+    body.classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
+    if (wasMobileNavActive) {
+      const fd = document.querySelector('.ss-features-dropdown');
+      const tr = document.querySelector('.ss-nav-features-trigger');
+      if (fd) fd.classList.remove('ss-mega-open');
+      if (tr) tr.setAttribute('aria-expanded', 'false');
+    }
   }
   if (mobileNavToggleBtn) {
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
@@ -64,13 +72,15 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -89,11 +99,13 @@
   window.addEventListener('load', aosInit);
 
   /**
-   * Initiate glightbox
+   * Initiate glightbox (optional — script may be omitted on some pages)
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
    * Init swiper sliders
@@ -115,9 +127,11 @@
   window.addEventListener("load", initSwiper);
 
   /**
-   * Initiate Pure Counter
+   * Initiate Pure Counter (optional — script may be omitted on some pages)
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  }
 
   /**
    * Frequently Asked Questions Toggle
@@ -149,7 +163,7 @@
   /**
    * Navmenu Scrollspy
    */
-  let navmenulinks = document.querySelectorAll('.navmenu a');
+  let navmenulinks = document.querySelectorAll('.navmenu > ul > li > a');
 
   function navmenuScrollspy() {
     navmenulinks.forEach(navmenulink => {
@@ -167,5 +181,67 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  /**
+   * Features mega menu: position under header; open/close on click only
+   */
+  function updateFeaturesMegaPanelTop() {
+    const header = document.querySelector('#header');
+    if (!header) return;
+    const bottom = header.getBoundingClientRect().bottom;
+    document.documentElement.style.setProperty('--ss-mega-top', `${bottom}px`);
+  }
+
+  window.addEventListener('scroll', updateFeaturesMegaPanelTop, { passive: true });
+  window.addEventListener('resize', updateFeaturesMegaPanelTop);
+  window.addEventListener('load', updateFeaturesMegaPanelTop);
+
+  const featuresDropdown = document.querySelector('.ss-features-dropdown');
+  const featuresTrigger = document.querySelector('.ss-nav-features-trigger');
+  const featuresMegaPanel = document.getElementById('features-mega-panel');
+
+  function closeFeaturesMega() {
+    if (!featuresDropdown || !featuresTrigger) return;
+    featuresDropdown.classList.remove('ss-mega-open');
+    featuresTrigger.setAttribute('aria-expanded', 'false');
+  }
+
+  function openFeaturesMega() {
+    if (!featuresDropdown || !featuresTrigger) return;
+    featuresDropdown.classList.add('ss-mega-open');
+    featuresTrigger.setAttribute('aria-expanded', 'true');
+    updateFeaturesMegaPanelTop();
+  }
+
+  if (featuresDropdown && featuresTrigger && featuresMegaPanel) {
+    featuresTrigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (featuresDropdown.classList.contains('ss-mega-open')) {
+        closeFeaturesMega();
+      } else {
+        openFeaturesMega();
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!featuresDropdown.classList.contains('ss-mega-open')) return;
+      if (!featuresDropdown.contains(e.target)) {
+        closeFeaturesMega();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeFeaturesMega();
+      }
+    });
+
+    featuresMegaPanel.querySelectorAll('.ss-mega-item').forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeFeaturesMega();
+      });
+    });
+  }
 
 })();

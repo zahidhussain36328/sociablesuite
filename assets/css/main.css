@@ -286,20 +286,18 @@ h6 {
     font-size: 16px;
     font-weight: 400;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    white-space: nowrap;
+    align-items: center; 
     transition: 0.3s;
   }
-
+ 
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    /* font-size: 12px; */
     line-height: 0;
     margin-left: 5px;
     transition: 0.3s;
   }
-
+ 
   .navmenu li:last-child a {
     padding-right: 0;
   }
@@ -490,6 +488,210 @@ h6 {
 
   .mobile-nav-active .navmenu>ul {
     display: block;
+  }
+
+  /* Features mega menu — mobile sheet */
+  .navmenu .ss-features-dropdown .ss-features-mega-panel {
+    position: static;
+    display: none;
+    width: auto;
+    margin: 10px 20px 0;
+    padding: 0;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+
+  .navmenu .ss-features-dropdown.ss-mega-open .ss-features-mega-panel {
+    display: block;
+  }
+
+  .navmenu .ss-features-dropdown > .ss-nav-features-trigger {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .navmenu .ss-features-dropdown > .ss-nav-features-trigger .bi-chevron-down {
+    font-size: 11px;
+    margin-left: 2px;
+    transition: transform 0.25s ease;
+  }
+
+  .navmenu .ss-features-dropdown.ss-mega-open > .ss-nav-features-trigger .bi-chevron-down {
+    transform: rotate(180deg);
+  }
+
+  .navmenu .ss-features-dropdown.ss-mega-open > .ss-nav-features-trigger {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-grid {
+    padding: 16px;
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #212529;
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-item:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.1rem !important;
+    color: color-mix(in srgb, var(--accent-color), #212529 35%);
+    background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: block;
+    color: #212529;
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-desc {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: #495057;
+  }
+}
+
+/* Features mega menu — desktop full-width card (click to open: .ss-mega-open) */
+@media (min-width: 1200px) {
+  .navmenu .ss-features-dropdown .ss-nav-features-trigger {
+    gap: 6px;
+    border-radius: 12px;
+    justify-content: flex-start;
+  }
+
+  .navmenu .ss-features-dropdown.ss-mega-open > .ss-nav-features-trigger {
+    color: var(--nav-hover-color);
+    background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  }
+
+  .navmenu .ss-features-dropdown .ss-nav-features-trigger .bi-chevron-down {
+    font-size: 11px;
+    opacity: 0.85;
+    margin-left: 2px;
+    transition: transform 0.25s ease;
+  }
+
+  .navmenu .ss-features-dropdown.ss-mega-open > .ss-nav-features-trigger .bi-chevron-down {
+    transform: rotate(180deg);
+  }
+
+  .navmenu .ss-features-dropdown .ss-features-mega-panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: var(--ss-mega-top, 196px);
+    z-index: 996;
+    display: block;
+    margin: 0;
+    padding: 8px 24px 28px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(6px);
+    transition: opacity 0.28s ease, visibility 0.28s ease, transform 0.28s ease;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .navmenu .ss-features-dropdown.ss-mega-open .ss-features-mega-panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .navmenu .ss-features-dropdown .ss-features-mega-panel .container-xl {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 36px 40px 40px;
+    border-radius: 20px;
+    background: color-mix(in srgb, var(--surface-color), transparent 4%);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18), 0 0 0 1px color-mix(in srgb, var(--accent-color), transparent 92%);
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 48px;
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 14px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--default-color);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-item:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 92%);
+    color: var(--default-color);
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    color: color-mix(in srgb, var(--accent-color), #212529 35%);
+    background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #212529;
+    line-height: 1.25;
+  }
+
+  .navmenu .ss-features-dropdown .ss-mega-desc {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    color: color-mix(in srgb, #212529, transparent 35%);
   }
 }
 

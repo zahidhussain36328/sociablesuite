@@ -1,32 +1,6 @@
 /**
- * Sociable Suite — responsive layout & compact UI
- * Targets viewports below ~1920×1200: tighter rhythm, viewport-aware hero,
- * scroll snap for cleaner “one section at a time” scrolling.
+ * Sociable Suite — responsive layout
  */
-
-/* -------------------------------------------------------------------------
-   Scroll: align sections to viewport (gentle snap; tall sections still scroll)
---------------------------------------------------------------------------- */
-@media (min-width: 768px) {
-  html {
-    scroll-padding-top: 96px;
-  }
-
-  body.index-page main {
-    scroll-snap-type: y proximity;
-  }
-
-  body.index-page main > section {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body.index-page main {
-    scroll-snap-type: none;
-  }
-}
 
 /* -------------------------------------------------------------------------
    Below “large desktop” (1920×1200 reference): global compaction
@@ -122,10 +96,10 @@
   }
 
   #hero.ss-hero .ss-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    font-size: 20px;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    font-size: 22px;
   }
 
   /* Why */
@@ -221,7 +195,7 @@
   }
 
   .dt-download-title {
-    font-size: clamp(1.75rem, 2.2vw + 1rem, 2.75rem);
+    font-size: clamp(1.75rem, 2.8vw + 1rem, 3.25rem);
     margin-bottom: 16px;
   }
 
@@ -254,7 +228,7 @@
   }
 
   .dt-connect .dt-connect-heading {
-    font-size: clamp(1.65rem, 2vw + 1rem, 2.65rem);
+    font-size: clamp(1.65rem, 2.8vw + 1rem, 3.15rem);
     margin-bottom: 12px;
   }
 
@@ -272,7 +246,7 @@
   }
 
   .dt-social-grid {
-    gap: 14px 16px;
+    gap: 24px 36px;
     margin-top: 8px;
   }
 
@@ -318,10 +292,10 @@
   }
 
   .dt-feature-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    margin-bottom: 18px;
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    margin-bottom: 22px;
   }
 
   .dt-feature-icon i {
@@ -334,7 +308,7 @@
   }
 
   .dt-feature-card p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.55;
   }
 
@@ -363,7 +337,7 @@
   }
 
   .ss-feature-image {
-    height: 200px;
+    height: 220px;
   }
 
   .ss-feature-content {
@@ -371,12 +345,12 @@
   }
 
   .ss-feature-content h3 {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     margin-bottom: 8px;
   }
 
   .ss-feature-content p {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 14px;
   }
 
@@ -551,9 +525,9 @@
   }
 
   #hero.ss-hero .ss-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 17px;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
   }
 }
 
@@ -794,10 +768,6 @@
 
   .dt-features {
     padding: 50px 0;
-  }
-
-  body.index-page main {
-    scroll-snap-type: none;
   }
 }
 

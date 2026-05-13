@@ -48,7 +48,68 @@
                 <ul>
                     <li><a href="./index.html" class="active">Home</a></li>
                     <li><a href="#download">About</a></li>
-                    <li><a href="#features">Features</a></li>
+                    <li class="dropdown ss-features-dropdown">
+                        <a href="javascript:void(0)" class="ss-nav-features-trigger" role="button"
+                            aria-expanded="false" aria-controls="features-mega-panel" aria-haspopup="true">
+                            <span>Features</span>
+                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="ss-features-mega-panel" id="features-mega-panel">
+                            <div class="container-xl">
+                                <div class="ss-mega-grid">
+                                    <a href="#features" class="ss-mega-item">
+                                        <span class="ss-mega-icon" aria-hidden="true"><i class="bi bi-grid-1x2"></i></span>
+                                        <span class="ss-mega-text">
+                                            <span class="ss-mega-title">Create</span>
+                                            <span class="ss-mega-desc">Plan campaigns, drafts, and a library of content ideas in one workspace.</span>
+                                        </span>
+                                    </a>
+                                    <a href="#features" class="ss-mega-item">
+                                        <span class="ss-mega-icon" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i></span>
+                                        <span class="ss-mega-text">
+                                            <span class="ss-mega-title">Analyze</span>
+                                            <span class="ss-mega-desc">Measure performance with real-time analytics and turn insights into growth.</span>
+                                        </span>
+                                    </a>
+                                    <a href="#features" class="ss-mega-item">
+                                        <span class="ss-mega-icon" aria-hidden="true"><i class="bi bi-people"></i></span>
+                                        <span class="ss-mega-text">
+                                            <span class="ss-mega-title">Collaborate</span>
+                                            <span class="ss-mega-desc">Work together seamlessly, from planning and approvals to publishing.</span>
+                                        </span>
+                                    </a>
+                                    <a href="#features" class="ss-mega-item">
+                                        <span class="ss-mega-icon" aria-hidden="true"><i class="bi bi-stars"></i></span>
+                                        <span class="ss-mega-text">
+                                            <span class="ss-mega-title">AI Assistant</span>
+                                            <span class="ss-mega-desc">Brainstorm ideas, refine captions, and repurpose content with AI.</span>
+                                        </span>
+                                    </a>
+                                    <a href="./publish.html" class="ss-mega-item">
+                                        <span class="ss-mega-icon" aria-hidden="true"><i class="bi bi-send"></i></span>
+                                        <span class="ss-mega-text">
+                                            <span class="ss-mega-title">Publish</span>
+                                            <span class="ss-mega-desc">Schedule and publish across 30+ networks from one calendar.</span>
+                                        </span>
+                                    </a>
+                                    <a href="#features" class="ss-mega-item">
+                                        <span class="ss-mega-icon" aria-hidden="true"><i class="bi bi-chat-heart"></i></span>
+                                        <span class="ss-mega-text">
+                                            <span class="ss-mega-title">Community</span>
+                                            <span class="ss-mega-desc">Stay on top of messages and engage with your audience faster.</span>
+                                        </span>
+                                    </a>
+                                    <a href="#features" class="ss-mega-item">
+                                        <span class="ss-mega-icon" aria-hidden="true"><i class="bi bi-link-45deg"></i></span>
+                                        <span class="ss-mega-text">
+                                            <span class="ss-mega-title">Start Page</span>
+                                            <span class="ss-mega-desc">Turn your bio into a polished link-in-bio landing page in minutes.</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="#faq">FAQ's</a></li>
 
                     <li><a href="#contact">Contact</a></li>
@@ -1104,13 +1165,15 @@
             speed: 900,
             spaceBetween: 30,
             grabCursor: true,
-
+            // pause on hover
+            pauseOnHover: true,
             centeredSlides: true,
             initialSlide: 2,
 
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
+                pauseOnHover: true,
             },
 
             navigation: {
