@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ss-page-loading">
 
 <head>
     <meta charset="utf-8">
@@ -35,6 +35,15 @@
 </head>
 
 <body class="index-page">
+
+    <div id="ss-page-loader" class="ss-page-loader" role="status" aria-live="polite" aria-busy="true"
+        aria-label="Loading page">
+        <div class="ss-page-loader__inner">
+            <img class="ss-page-loader__logo" src="./assets/img/sociable-suite-logo.png" alt="" width="200"
+                height="60" decoding="async">
+            <div class="ss-page-loader__spinner" aria-hidden="true"></div>
+        </div>
+    </div>
 
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div
@@ -110,17 +119,18 @@
                             </div>
                         </div>
                     </li>
+                    <li><a href="./pricing.html">Pricing</a></li>
                     <li><a href="#faq">FAQ's</a></li>
 
                     <li><a href="#contact">Contact</a></li>
                     <li class="ms-3">
-                        <a class="btn-getstarted d-md-none d-inline-block" href="#">Get Started</a>
+                        <a class="btn-getstarted d-md-none d-inline-block" href="./signup.html">Get Started</a>
                     </li>
                 </ul>
                 <i class="mobile-nav-toggle d-md-none bi bi-list"></i>
             </nav>
 
-            <a class="btn-getstarted d-none d-xl-block" href="#">Get Started</a>
+            <a class="btn-getstarted d-none d-xl-block" href="./signup.html">Get Started</a>
 
         </div>
     </header>
@@ -1086,6 +1096,7 @@
                         <li><a href="#">How-to Articles</a></li>
                         <li><a href="#">Videos</a></li>
                         <li><a href="#">Our Roadmap</a></li>
+                        <li><a href="./pricing.html">Pricing</a></li>
                         <li><a href="#">Compare us</a></li>
                         <li><a href="#">Mobile App</a></li>
                         <li><a href="#">Browser Extension</a></li>

@@ -1,4 +1,25 @@
+(function () {
+  "use strict";
 
+  /**
+   * Full-page loader: hide after window load (images, fonts, etc.)
+   */
+  function hidePageLoader() {
+    const el = document.getElementById("ss-page-loader");
+    if (!el) return;
+    el.classList.add("ss-page-loader--hide");
+    document.documentElement.classList.remove("ss-page-loading");
+    window.setTimeout(() => {
+      el.remove();
+    }, 500);
+  }
+
+  if (document.readyState === "complete") {
+    hidePageLoader();
+  } else {
+    window.addEventListener("load", hidePageLoader);
+  }
+})();
 
 (function () {
   "use strict";
